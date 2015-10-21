@@ -14,19 +14,11 @@
 		90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */; };
 		90870CFA1BD7395F00A53C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF91BD7395F00A53C8E /* Assets.xcassets */; };
 		90870D081BD7395F00A53C8E /* PSAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D071BD7395F00A53C8E /* PSAlertViewTests.m */; };
-		90870D131BD7395F00A53C8E /* PSAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */; };
 		90870D231BD73A8400A53C8E /* PSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D221BD73A8400A53C8E /* PSAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		90870D041BD7395F00A53C8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 90870CDF1BD7395F00A53C8E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 90870CE61BD7395F00A53C8E;
-			remoteInfo = PSAlertView;
-		};
-		90870D0F1BD7395F00A53C8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 90870CDF1BD7395F00A53C8E /* Project object */;
 			proxyType = 1;
@@ -49,7 +41,6 @@
 		90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90870D071BD7395F00A53C8E /* PSAlertViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewTests.m; sourceTree = "<group>"; };
 		90870D091BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90870D0E1BD7395F00A53C8E /* PSAlertViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSAlertViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewUITests.m; sourceTree = "<group>"; };
 		90870D141BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90870D211BD73A8400A53C8E /* PSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAlertView.h; sourceTree = "<group>"; };
@@ -65,13 +56,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		90870D001BD7395F00A53C8E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		90870D0B1BD7395F00A53C8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -96,7 +80,6 @@
 			children = (
 				90870CE71BD7395F00A53C8E /* PSAlertView.app */,
 				90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */,
-				90870D0E1BD7395F00A53C8E /* PSAlertViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,24 +174,6 @@
 			productReference = 90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		90870D0D1BD7395F00A53C8E /* PSAlertViewUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 90870D1D1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewUITests" */;
-			buildPhases = (
-				90870D0A1BD7395F00A53C8E /* Sources */,
-				90870D0B1BD7395F00A53C8E /* Frameworks */,
-				90870D0C1BD7395F00A53C8E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				90870D101BD7395F00A53C8E /* PBXTargetDependency */,
-			);
-			name = PSAlertViewUITests;
-			productName = PSAlertViewUITests;
-			productReference = 90870D0E1BD7395F00A53C8E /* PSAlertViewUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -222,10 +187,6 @@
 						CreatedOnToolsVersion = 7.0.1;
 					};
 					90870D021BD7395F00A53C8E = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = 90870CE61BD7395F00A53C8E;
-					};
-					90870D0D1BD7395F00A53C8E = {
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = 90870CE61BD7395F00A53C8E;
 					};
@@ -246,7 +207,6 @@
 			targets = (
 				90870CE61BD7395F00A53C8E /* PSAlertView */,
 				90870D021BD7395F00A53C8E /* PSAlertViewTests */,
-				90870D0D1BD7395F00A53C8E /* PSAlertViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,13 +222,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		90870D011BD7395F00A53C8E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		90870D0C1BD7395F00A53C8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -298,14 +251,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90870D0A1BD7395F00A53C8E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90870D131BD7395F00A53C8E /* PSAlertViewUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -313,11 +258,6 @@
 			isa = PBXTargetDependency;
 			target = 90870CE61BD7395F00A53C8E /* PSAlertView */;
 			targetProxy = 90870D041BD7395F00A53C8E /* PBXContainerItemProxy */;
-		};
-		90870D101BD7395F00A53C8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 90870CE61BD7395F00A53C8E /* PSAlertView */;
-			targetProxy = 90870D0F1BD7395F00A53C8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -461,30 +401,6 @@
 			};
 			name = Release;
 		};
-		90870D1E1BD7395F00A53C8E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PSAlertViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertViewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PSAlertView;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		90870D1F1BD7395F00A53C8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = PSAlertViewUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertViewUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = PSAlertView;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -511,15 +427,6 @@
 			buildConfigurations = (
 				90870D1B1BD7395F00A53C8E /* Debug */,
 				90870D1C1BD7395F00A53C8E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		90870D1D1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				90870D1E1BD7395F00A53C8E /* Debug */,
-				90870D1F1BD7395F00A53C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
