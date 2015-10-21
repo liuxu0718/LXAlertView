@@ -13,10 +13,9 @@
 		90870CF51BD7395F00A53C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF31BD7395F00A53C8E /* Main.storyboard */; };
 		90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */; };
 		90870CFA1BD7395F00A53C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF91BD7395F00A53C8E /* Assets.xcassets */; };
-		90870CFD1BD7395F00A53C8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90870CFB1BD7395F00A53C8E /* LaunchScreen.storyboard */; };
 		90870D081BD7395F00A53C8E /* PSAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D071BD7395F00A53C8E /* PSAlertViewTests.m */; };
 		90870D131BD7395F00A53C8E /* PSAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */; };
-		90870D231BD73A8400A53C8E /* PSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D221BD73A8400A53C8E /* PSAlertView.m */; settings = {ASSET_TAGS = (); }; };
+		90870D231BD73A8400A53C8E /* PSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D221BD73A8400A53C8E /* PSAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		90870CF41BD7395F00A53C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90870CF71BD7395F00A53C8E /* PSAlertView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSAlertView.xcdatamodel; sourceTree = "<group>"; };
 		90870CF91BD7395F00A53C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		90870CFC1BD7395F00A53C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90870CFE1BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90870D071BD7395F00A53C8E /* PSAlertViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewTests.m; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				90870CF11BD7395F00A53C8E /* ViewController.m */,
 				90870CF31BD7395F00A53C8E /* Main.storyboard */,
 				90870CF91BD7395F00A53C8E /* Assets.xcassets */,
-				90870CFB1BD7395F00A53C8E /* LaunchScreen.storyboard */,
 				90870CFE1BD7395F00A53C8E /* Info.plist */,
 				90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */,
 				90870CEA1BD7395F00A53C8E /* Supporting Files */,
@@ -259,7 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90870CFD1BD7395F00A53C8E /* LaunchScreen.storyboard in Resources */,
 				90870CFA1BD7395F00A53C8E /* Assets.xcassets in Resources */,
 				90870CF51BD7395F00A53C8E /* Main.storyboard in Resources */,
 			);
@@ -334,14 +330,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		90870CFB1BD7395F00A53C8E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				90870CFC1BD7395F00A53C8E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -381,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -429,7 +417,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PSAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -442,7 +429,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PSAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
