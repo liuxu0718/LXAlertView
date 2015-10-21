@@ -429,7 +429,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PSAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,7 +442,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PSAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +518,7 @@
 				90870D191BD7395F00A53C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90870D1A1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				90870D1C1BD7395F00A53C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90870D1D1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				90870D1F1BD7395F00A53C8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
