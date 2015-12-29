@@ -3,4 +3,4 @@
 
 
 
-![image](https://github.com/liuxu0718/PSAlertView/blob/master/screenshot.png)
+![image](https://github.com/liuxu0718/PSAlertView/blob/master/screenshot.gif)
