@@ -85,7 +85,7 @@
 }
 
 -(void)setStartState {
-    self.transform = CGAffineTransformMakeScale(0,0);;
+    self.transform = CGAffineTransformMakeScale(0.01,0.01);;
 }
 
 -(void)setEndState {
