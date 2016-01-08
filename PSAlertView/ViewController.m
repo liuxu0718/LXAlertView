@@ -7,33 +7,42 @@
 //
 
 #import "ViewController.h"
-#import "PSAlertView.h"
+#import "LXAlertView.h"
 @interface ViewController ()
+{
+    NSArray *_dataArray;
+}
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UIButton *showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    showButton.center = self.view.center;
-    [showButton setTitle:@"show" forState:UIControlStateNormal];
-    showButton.backgroundColor = [UIColor grayColor];
-    [showButton addTarget:self action:@selector(showButtonAction) forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:showButton];
+    _dataArray = @[@"AlertDefault", @"AlertSelect", @"AlertTextField", @"AlertLand"];
+
+    for (int i = 0; i < _dataArray.count; i++) {
+        UIButton *showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
+        showButton.center = CGPointMake(self.view.center.x, 50 * (i + 3));
+        [showButton setTitle:_dataArray[i] forState:UIControlStateNormal];
+        showButton.tag = i + 1;
+        showButton.backgroundColor = [UIColor grayColor];
+        [showButton addTarget:self action:@selector(showButtonAction:) forControlEvents:UIControlEventTouchDown];
+        [self.view addSubview:showButton];
+    }
 }
 
-- (void)showButtonAction {
-    PSAlertView *alert = [[PSAlertView alloc]initWithAlertTitle:@"Hello World"];
+- (void)showButtonAction:(UIButton *)sender {
+    LXAlertView *alert = [[LXAlertView alloc]initWithAlertTitle:@"Hello World" WithAlertType:sender.tag];
     [alert show];
-    alert.confirmBlock = ^(BOOL isConfirm) {
+    alert.block = ^(BOOL isConfirm, NSString *text) {
         if (isConfirm) {
-            NSLog(@"yes");
+            NSLog(@"%@\n%@", @"true", text);
         }
         else {
-            NSLog(@"no");
+            NSLog(@"%@\n%@", @"false", text);
         }
     };
 }

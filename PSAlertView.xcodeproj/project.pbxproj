@@ -14,7 +14,7 @@
 		90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */; };
 		90870CFA1BD7395F00A53C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF91BD7395F00A53C8E /* Assets.xcassets */; };
 		90870D081BD7395F00A53C8E /* PSAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D071BD7395F00A53C8E /* PSAlertViewTests.m */; };
-		90870D231BD73A8400A53C8E /* PSAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D221BD73A8400A53C8E /* PSAlertView.m */; };
+		9098F6F11C3F735D00B5B246 /* LXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9098F6F01C3F735D00B5B246 /* LXAlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +43,8 @@
 		90870D091BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewUITests.m; sourceTree = "<group>"; };
 		90870D141BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90870D211BD73A8400A53C8E /* PSAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAlertView.h; sourceTree = "<group>"; };
-		90870D221BD73A8400A53C8E /* PSAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAlertView.m; sourceTree = "<group>"; };
+		9098F6EF1C3F735D00B5B246 /* LXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlertView.h; sourceTree = "<group>"; };
+		9098F6F01C3F735D00B5B246 /* LXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		90870CE91BD7395F00A53C8E /* PSAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				90870D201BD739C500A53C8E /* MyAlertView */,
+				9098F6EE1C3F735D00B5B246 /* LXAlertView */,
 				90870CED1BD7395F00A53C8E /* AppDelegate.h */,
 				90870CEE1BD7395F00A53C8E /* AppDelegate.m */,
 				90870CF01BD7395F00A53C8E /* ViewController.h */,
@@ -127,13 +127,13 @@
 			path = PSAlertViewUITests;
 			sourceTree = "<group>";
 		};
-		90870D201BD739C500A53C8E /* MyAlertView */ = {
+		9098F6EE1C3F735D00B5B246 /* LXAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				90870D211BD73A8400A53C8E /* PSAlertView.h */,
-				90870D221BD73A8400A53C8E /* PSAlertView.m */,
+				9098F6EF1C3F735D00B5B246 /* LXAlertView.h */,
+				9098F6F01C3F735D00B5B246 /* LXAlertView.m */,
 			);
-			path = MyAlertView;
+			path = LXAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90870D231BD73A8400A53C8E /* PSAlertView.m in Sources */,
+				9098F6F11C3F735D00B5B246 /* LXAlertView.m in Sources */,
 				90870CF21BD7395F00A53C8E /* ViewController.m in Sources */,
 				90870CEF1BD7395F00A53C8E /* AppDelegate.m in Sources */,
 				90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */,
