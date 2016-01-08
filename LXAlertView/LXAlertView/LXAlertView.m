@@ -103,7 +103,6 @@
 
 #pragma mark - show
 - (void)show {
-    UIViewController *vc = [self RootViewController];
     if (AlertLand == self.type) {
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, 0, kAlertWidth, kAlertHeight);
         [UIView animateWithDuration:0.2 animations:^{
@@ -111,19 +110,10 @@
         }];
     }
     else {
-        self.frame = CGRectMake((CGRectGetWidth(vc.view.bounds) - kAlertWidth) * 0.5, (CGRectGetHeight(vc.view.bounds) - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
+        self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         [self setStartState];
     }
-    [vc.view addSubview:self];
-}
-
-- (UIViewController *)RootViewController {
-    UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController *topVc = vc;
-    while (topVc.presentedViewController) {
-        topVc = topVc.presentedViewController;
-    }
-    return topVc;
+    [[UIApplication sharedApplication].keyWindow addSubview:self];
 }
 
 -(void)setStartState {
@@ -178,14 +168,13 @@
     if (newSuperview == nil) {
         return;
     }
-    UIViewController *topVC = [self RootViewController];
     if (!self.overlayView) {
-        self.overlayView = [[UIView alloc] initWithFrame:topVC.view.bounds];
+        self.overlayView = [[UIView alloc]initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
         self.overlayView.backgroundColor = [UIColor blackColor];
         self.overlayView.alpha = 0.6f;
         self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
-    [topVC.view addSubview:self.overlayView];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.overlayView];
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setEndState];
