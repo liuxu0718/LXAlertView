@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  PSAlertView
+//  LXAlertView
 //
 //  Created by 刘旭 on 15/10/21.
 //  Copyright © 2015年 刘旭. All rights reserved.
@@ -24,10 +24,10 @@
     _dataArray = @[@"AlertDefault", @"AlertSelect", @"AlertTextField", @"AlertLand"];
 
     for (int i = 0; i < _dataArray.count; i++) {
-        UIButton *showButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
-        showButton.center = CGPointMake(self.view.center.x, 50 * (i + 3));
+        UIButton *showButton       = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
+        showButton.center          = CGPointMake(self.view.center.x, 50 * (i + 3));
         [showButton setTitle:_dataArray[i] forState:UIControlStateNormal];
-        showButton.tag = i + 1;
+        showButton.tag             = i + 1;
         showButton.backgroundColor = [UIColor grayColor];
         [showButton addTarget:self action:@selector(showButtonAction:) forControlEvents:UIControlEventTouchDown];
         [self.view addSubview:showButton];

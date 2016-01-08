@@ -1,6 +1,6 @@
 //
-//  PSAlertView.m
-//  PSAlertView
+//  LXAlertView.m
+//  LXAlertView
 //
 //  Created by 刘旭 on 15/10/21.
 //  Copyright © 2015年 刘旭. All rights reserved.
@@ -14,11 +14,11 @@
 
 @interface LXAlertView ()<UITextFieldDelegate>
 
-@property (nonatomic, strong) UIView *backgroundView;//alertView背景颜色
-@property (nonatomic, strong) UIView *overlayView;//蒙层颜色
-@property (nonatomic, strong) UIButton *closeButton;//关闭按钮
-@property (nonatomic, strong) UIButton *confirmButton;//确认按钮
-@property (nonatomic, strong) UILabel *titleLabel;//中间文字
+@property (nonatomic, strong) UIView      *backgroundView;//alertView背景颜色
+@property (nonatomic, strong) UIView      *overlayView;//蒙层颜色
+@property (nonatomic, strong) UIButton    *closeButton;//关闭按钮
+@property (nonatomic, strong) UIButton    *confirmButton;//确认按钮
+@property (nonatomic, strong) UILabel     *titleLabel;//中间文字
 @property (nonatomic, strong) UITextField *textField;//输入框
 
 @end
@@ -31,47 +31,45 @@
         
         self.backgroundColor = [UIColor clearColor];
         
-        self.type = alertType;
-        
-        self.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kAlertWidth, kAlertHeight)];
+        self.type                           = alertType;
+
+        self.backgroundView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kAlertWidth, kAlertHeight)];
         self.backgroundView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.backgroundView];
-        
-        self.titleLabel = [[UILabel alloc]init];
-        self.titleLabel.textColor = [UIColor blackColor];
-        self.titleLabel.font = [UIFont systemFontOfSize:14];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.titleLabel.text = alertTitle;
+
+        self.titleLabel                     = [[UILabel alloc]init];
+        self.titleLabel.textColor           = [UIColor blackColor];
+        self.titleLabel.font                = [UIFont systemFontOfSize:14];
+        self.titleLabel.textAlignment       = NSTextAlignmentCenter;
+        self.titleLabel.text                = alertTitle;
         [self.backgroundView addSubview:self.titleLabel];
-        
-        self.textField = [[UITextField alloc]init];
-        self.textField.textColor = [UIColor blackColor];
-        self.textField.layer.borderColor = [UIColor blackColor].CGColor;
-        self.textField.layer.borderWidth = 0.5;
-        self.textField.font = [UIFont systemFontOfSize:12];
-        self.textField.placeholder = @"helloworld";
-        self.textField.delegate = self;
-        self.textField.returnKeyType = UIReturnKeyDone;
+
+        self.textField                      = [[UITextField alloc]init];
+        self.textField.textColor            = [UIColor blackColor];
+        self.textField.layer.borderColor    = [UIColor blackColor].CGColor;
+        self.textField.layer.borderWidth    = 0.5;
+        self.textField.font                 = [UIFont systemFontOfSize:12];
+        self.textField.placeholder          = @"helloworld";
+        self.textField.delegate             = self;
+        self.textField.returnKeyType        = UIReturnKeyDone;
         [self.backgroundView addSubview:self.textField];
-        
-        self.confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.confirmButton.backgroundColor = [UIColor blackColor];
-        self.confirmButton.tag = 301;
+
+        self.confirmButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.confirmButton.backgroundColor  = [UIColor blackColor];
+        self.confirmButton.tag              = 301;
         [self.confirmButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchUpInside];
         [self.backgroundView addSubview:self.confirmButton];
-        
-        self.closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.closeButton.backgroundColor = [UIColor blackColor];
-        self.closeButton.tag = 300;
+
+        self.closeButton                    = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.closeButton.backgroundColor    = [UIColor blackColor];
+        self.closeButton.tag                = 300;
         [self.closeButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchDown];
         [self.backgroundView addSubview:self.closeButton];
         
         if (AlertDefault == self.type || AlertLand == self.type) {
             self.closeButton.hidden = YES;
             self.textField.hidden = YES;
-            //title
             self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height - 45);
-            //confirm
             [self.confirmButton setImage:[UIImage imageNamed:@"alert_confirm"] forState:UIControlStateNormal];
             self.confirmButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width, 45);
         }

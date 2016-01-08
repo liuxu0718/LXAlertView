@@ -1,6 +1,6 @@
 //
-//  PSAlertView.h
-//  PSAlertView
+//  LXAlertView.h
+//  LXAlertView
 //
 //  Created by 刘旭 on 15/10/21.
 //  Copyright © 2015年 刘旭. All rights reserved.
@@ -15,12 +15,12 @@ typedef NS_ENUM(NSInteger, AlertType) {
     AlertLand,
 };
 
-typedef void (^PSAlertViewBlock)(BOOL isConfirm, NSString *text);
+typedef void (^LXAlertViewBlock)(BOOL isConfirm, NSString *text);
 
 @interface LXAlertView : UIView
 
-@property (nonatomic, copy) PSAlertViewBlock block;
-@property (nonatomic, assign) AlertType type;
+@property (nonatomic, copy)   LXAlertViewBlock block;
+@property (nonatomic, assign) AlertType        type;
 
 
 - (id)initWithAlertTitle:(NSString *)alertTitle
