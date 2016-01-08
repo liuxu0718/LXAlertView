@@ -106,7 +106,6 @@
 #pragma mark - show
 - (void)show {
     UIViewController *vc = [self RootViewController];
-    [vc.view addSubview:self];
     if (AlertLand == self.type) {
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, 0, kAlertWidth, kAlertHeight);
         [UIView animateWithDuration:0.2 animations:^{
@@ -117,6 +116,7 @@
         self.frame = CGRectMake((CGRectGetWidth(vc.view.bounds) - kAlertWidth) * 0.5, (CGRectGetHeight(vc.view.bounds) - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         [self setStartState];
     }
+    [vc.view addSubview:self];
 }
 
 - (UIViewController *)RootViewController {
