@@ -11,10 +11,10 @@
 		90870CEF1BD7395F00A53C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870CEE1BD7395F00A53C8E /* AppDelegate.m */; };
 		90870CF21BD7395F00A53C8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870CF11BD7395F00A53C8E /* ViewController.m */; };
 		90870CF51BD7395F00A53C8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF31BD7395F00A53C8E /* Main.storyboard */; };
-		90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */; };
 		90870CFA1BD7395F00A53C8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90870CF91BD7395F00A53C8E /* Assets.xcassets */; };
-		90870D081BD7395F00A53C8E /* PSAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90870D071BD7395F00A53C8E /* PSAlertViewTests.m */; };
 		9098F6F11C3F735D00B5B246 /* LXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9098F6F01C3F735D00B5B246 /* LXAlertView.m */; };
+		9098F71D1C3F8D2700B5B246 /* LXAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9098F71C1C3F8D2700B5B246 /* LXAlertViewTests.m */; };
+		9098F7201C3F8FA900B5B246 /* LXAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9098F71E1C3F8FA900B5B246 /* LXAlertView.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,28 +23,28 @@
 			containerPortal = 90870CDF1BD7395F00A53C8E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 90870CE61BD7395F00A53C8E;
-			remoteInfo = PSAlertView;
+			remoteInfo = LXAlertView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		90870CE71BD7395F00A53C8E /* PSAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90870CE71BD7395F00A53C8E /* LXAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LXAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90870CEB1BD7395F00A53C8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90870CED1BD7395F00A53C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90870CEE1BD7395F00A53C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		90870CF01BD7395F00A53C8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		90870CF11BD7395F00A53C8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		90870CF41BD7395F00A53C8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		90870CF71BD7395F00A53C8E /* PSAlertView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSAlertView.xcdatamodel; sourceTree = "<group>"; };
 		90870CF91BD7395F00A53C8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90870CFE1BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		90870D071BD7395F00A53C8E /* PSAlertViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewTests.m; sourceTree = "<group>"; };
+		90870D031BD7395F00A53C8E /* LXAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LXAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90870D091BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAlertViewUITests.m; sourceTree = "<group>"; };
+		90870D121BD7395F00A53C8E /* LXAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAlertViewUITests.m; sourceTree = "<group>"; };
 		90870D141BD7395F00A53C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9098F6EF1C3F735D00B5B246 /* LXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXAlertView.h; sourceTree = "<group>"; };
 		9098F6F01C3F735D00B5B246 /* LXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlertView.m; sourceTree = "<group>"; };
+		9098F71C1C3F8D2700B5B246 /* LXAlertViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXAlertViewTests.m; sourceTree = "<group>"; };
+		9098F71F1C3F8FA900B5B246 /* PSAlertView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PSAlertView.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +68,9 @@
 		90870CDE1BD7395F00A53C8E = {
 			isa = PBXGroup;
 			children = (
-				90870CE91BD7395F00A53C8E /* PSAlertView */,
-				90870D061BD7395F00A53C8E /* PSAlertViewTests */,
-				90870D111BD7395F00A53C8E /* PSAlertViewUITests */,
+				90870CE91BD7395F00A53C8E /* LXAlertView */,
+				90870D061BD7395F00A53C8E /* LXAlertViewTests */,
+				90870D111BD7395F00A53C8E /* LXAlertViewUITests */,
 				90870CE81BD7395F00A53C8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,13 +78,13 @@
 		90870CE81BD7395F00A53C8E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				90870CE71BD7395F00A53C8E /* PSAlertView.app */,
-				90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */,
+				90870CE71BD7395F00A53C8E /* LXAlertView.app */,
+				90870D031BD7395F00A53C8E /* LXAlertViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90870CE91BD7395F00A53C8E /* PSAlertView */ = {
+		90870CE91BD7395F00A53C8E /* LXAlertView */ = {
 			isa = PBXGroup;
 			children = (
 				9098F6EE1C3F735D00B5B246 /* LXAlertView */,
@@ -95,10 +95,10 @@
 				90870CF31BD7395F00A53C8E /* Main.storyboard */,
 				90870CF91BD7395F00A53C8E /* Assets.xcassets */,
 				90870CFE1BD7395F00A53C8E /* Info.plist */,
-				90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */,
+				9098F71E1C3F8FA900B5B246 /* LXAlertView.xcdatamodeld */,
 				90870CEA1BD7395F00A53C8E /* Supporting Files */,
 			);
-			path = PSAlertView;
+			path = LXAlertView;
 			sourceTree = "<group>";
 		};
 		90870CEA1BD7395F00A53C8E /* Supporting Files */ = {
@@ -109,22 +109,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		90870D061BD7395F00A53C8E /* PSAlertViewTests */ = {
+		90870D061BD7395F00A53C8E /* LXAlertViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				90870D071BD7395F00A53C8E /* PSAlertViewTests.m */,
+				9098F71C1C3F8D2700B5B246 /* LXAlertViewTests.m */,
 				90870D091BD7395F00A53C8E /* Info.plist */,
 			);
-			path = PSAlertViewTests;
+			path = LXAlertViewTests;
 			sourceTree = "<group>";
 		};
-		90870D111BD7395F00A53C8E /* PSAlertViewUITests */ = {
+		90870D111BD7395F00A53C8E /* LXAlertViewUITests */ = {
 			isa = PBXGroup;
 			children = (
-				90870D121BD7395F00A53C8E /* PSAlertViewUITests.m */,
+				90870D121BD7395F00A53C8E /* LXAlertViewUITests.m */,
 				90870D141BD7395F00A53C8E /* Info.plist */,
 			);
-			path = PSAlertViewUITests;
+			path = LXAlertViewUITests;
 			sourceTree = "<group>";
 		};
 		9098F6EE1C3F735D00B5B246 /* LXAlertView */ = {
@@ -139,9 +139,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		90870CE61BD7395F00A53C8E /* PSAlertView */ = {
+		90870CE61BD7395F00A53C8E /* LXAlertView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90870D171BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertView" */;
+			buildConfigurationList = 90870D171BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "LXAlertView" */;
 			buildPhases = (
 				90870CE31BD7395F00A53C8E /* Sources */,
 				90870CE41BD7395F00A53C8E /* Frameworks */,
@@ -151,14 +151,14 @@
 			);
 			dependencies = (
 			);
-			name = PSAlertView;
-			productName = PSAlertView;
-			productReference = 90870CE71BD7395F00A53C8E /* PSAlertView.app */;
+			name = LXAlertView;
+			productName = LXAlertView;
+			productReference = 90870CE71BD7395F00A53C8E /* LXAlertView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		90870D021BD7395F00A53C8E /* PSAlertViewTests */ = {
+		90870D021BD7395F00A53C8E /* LXAlertViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90870D1A1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewTests" */;
+			buildConfigurationList = 90870D1A1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "LXAlertViewTests" */;
 			buildPhases = (
 				90870CFF1BD7395F00A53C8E /* Sources */,
 				90870D001BD7395F00A53C8E /* Frameworks */,
@@ -169,9 +169,9 @@
 			dependencies = (
 				90870D051BD7395F00A53C8E /* PBXTargetDependency */,
 			);
-			name = PSAlertViewTests;
-			productName = PSAlertViewTests;
-			productReference = 90870D031BD7395F00A53C8E /* PSAlertViewTests.xctest */;
+			name = LXAlertViewTests;
+			productName = LXAlertViewTests;
+			productReference = 90870D031BD7395F00A53C8E /* LXAlertViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -192,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 90870CE21BD7395F00A53C8E /* Build configuration list for PBXProject "PSAlertView" */;
+			buildConfigurationList = 90870CE21BD7395F00A53C8E /* Build configuration list for PBXProject "LXAlertView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -205,8 +205,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				90870CE61BD7395F00A53C8E /* PSAlertView */,
-				90870D021BD7395F00A53C8E /* PSAlertViewTests */,
+				90870CE61BD7395F00A53C8E /* LXAlertView */,
+				90870D021BD7395F00A53C8E /* LXAlertViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,10 +235,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9098F7201C3F8FA900B5B246 /* LXAlertView.xcdatamodeld in Sources */,
 				9098F6F11C3F735D00B5B246 /* LXAlertView.m in Sources */,
 				90870CF21BD7395F00A53C8E /* ViewController.m in Sources */,
 				90870CEF1BD7395F00A53C8E /* AppDelegate.m in Sources */,
-				90870CF81BD7395F00A53C8E /* PSAlertView.xcdatamodeld in Sources */,
 				90870CEC1BD7395F00A53C8E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90870D081BD7395F00A53C8E /* PSAlertViewTests.m in Sources */,
+				9098F71D1C3F8D2700B5B246 /* LXAlertViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +256,7 @@
 /* Begin PBXTargetDependency section */
 		90870D051BD7395F00A53C8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 90870CE61BD7395F00A53C8E /* PSAlertView */;
+			target = 90870CE61BD7395F00A53C8E /* LXAlertView */;
 			targetProxy = 90870D041BD7395F00A53C8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -357,10 +357,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PSAlertView/Info.plist;
+				INFOPLIST_FILE = LXAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertView;
+				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.LXAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -369,10 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = PSAlertView/Info.plist;
+				INFOPLIST_FILE = LXAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertView;
+				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.LXAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -381,11 +381,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PSAlertViewTests/Info.plist;
+				INFOPLIST_FILE = LXAlertViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.LXAlertViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSAlertView.app/PSAlertView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LXAlertView.app/LXAlertView";
 			};
 			name = Debug;
 		};
@@ -393,18 +393,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PSAlertViewTests/Info.plist;
+				INFOPLIST_FILE = LXAlertViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.PSAlertViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = liuxu.com.LXAlertViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSAlertView.app/PSAlertView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LXAlertView.app/LXAlertView";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90870CE21BD7395F00A53C8E /* Build configuration list for PBXProject "PSAlertView" */ = {
+		90870CE21BD7395F00A53C8E /* Build configuration list for PBXProject "LXAlertView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90870D151BD7395F00A53C8E /* Debug */,
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90870D171BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertView" */ = {
+		90870D171BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "LXAlertView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90870D181BD7395F00A53C8E /* Debug */,
@@ -422,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90870D1A1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "PSAlertViewTests" */ = {
+		90870D1A1BD7395F00A53C8E /* Build configuration list for PBXNativeTarget "LXAlertViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90870D1B1BD7395F00A53C8E /* Debug */,
@@ -434,13 +434,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		90870CF61BD7395F00A53C8E /* PSAlertView.xcdatamodeld */ = {
+		9098F71E1C3F8FA900B5B246 /* LXAlertView.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				90870CF71BD7395F00A53C8E /* PSAlertView.xcdatamodel */,
+				9098F71F1C3F8FA900B5B246 /* PSAlertView.xcdatamodel */,
 			);
-			currentVersion = 90870CF71BD7395F00A53C8E /* PSAlertView.xcdatamodel */;
-			path = PSAlertView.xcdatamodeld;
+			currentVersion = 9098F71F1C3F8FA900B5B246 /* PSAlertView.xcdatamodel */;
+			path = LXAlertView.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

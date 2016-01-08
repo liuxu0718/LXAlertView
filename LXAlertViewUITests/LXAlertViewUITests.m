@@ -1,6 +1,6 @@
 //
-//  PSAlertViewUITests.m
-//  PSAlertViewUITests
+//  LXAlertViewUITests.m
+//  LXAlertViewUITests
 //
 //  Created by 刘旭 on 15/10/21.
 //  Copyright © 2015年 刘旭. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface PSAlertViewUITests : XCTestCase
+@interface LXAlertViewUITests : XCTestCase
 
 @end
 
-@implementation PSAlertViewUITests
+@implementation LXAlertViewUITests
 
 - (void)setUp {
     [super setUp];
