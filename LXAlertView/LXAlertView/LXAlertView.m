@@ -113,7 +113,8 @@
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         [self setStartState];
     }
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    UIViewController *topVC = [self appRootViewController];
+    [topVC.view addSubview:self];
 }
 
 -(void)setStartState {
@@ -122,6 +123,16 @@
 
 -(void)setEndState {
     self.transform = CGAffineTransformMakeScale(1.0, 1.0);
+}
+
+- (UIViewController *)appRootViewController {
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *topVC = appRootVC;
+    //如果是模态.
+    while (topVC.presentedViewController) {
+        topVC = topVC.presentedViewController;
+    }
+    return topVC;
 }
 
 #pragma mark - confirm
@@ -169,12 +180,12 @@
         return;
     }
     if (!self.overlayView) {
-        self.overlayView = [[UIView alloc]initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+        self.overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
         self.overlayView.backgroundColor = [UIColor blackColor];
         self.overlayView.alpha = 0.6f;
         self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
-    [[UIApplication sharedApplication].keyWindow addSubview:self.overlayView];
+    [[self appRootViewController].view addSubview:self.overlayView];
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setEndState];
