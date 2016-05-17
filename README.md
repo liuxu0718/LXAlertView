@@ -1,4 +1,4 @@
-# PSAlertView
+# LXAlertView
 
 自定义的AlertView
 
