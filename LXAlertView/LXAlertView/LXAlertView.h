@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol LXAlertViewDelegate <NSObject>
+
+- (void)LXAlertViewClickButtonIndex:(NSInteger)buttonIndex
+                             Object:(NSString *)object;
+
+@end
+
 typedef NS_ENUM(NSInteger, AlertType) {
     AlertDefault = 1,
     AlertSelect,
@@ -15,16 +22,14 @@ typedef NS_ENUM(NSInteger, AlertType) {
     AlertLand,
 };
 
-typedef void (^LXAlertViewBlock)(BOOL isConfirm, NSString *text);
-
 @interface LXAlertView : UIView
 
-@property (nonatomic, copy)   LXAlertViewBlock block;
-@property (nonatomic, assign) AlertType        type;
+@property (nonatomic, assign) AlertType type;
+@property (nonatomic, weak) id<LXAlertViewDelegate> delegate;
 
 
 - (id)initWithAlertTitle:(NSString *)alertTitle
-           WithAlertType:(AlertType)alertType;
+               AlertType:(AlertType)alertType;
 - (void)show;
 
 @end

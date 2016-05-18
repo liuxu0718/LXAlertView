@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "LXAlertView.h"
-@interface ViewController ()
+@interface ViewController ()<LXAlertViewDelegate>
 {
     NSArray *_dataArray;
 }
@@ -35,16 +35,19 @@
 }
 
 - (void)showButtonAction:(UIButton *)sender {
-    LXAlertView *alert = [[LXAlertView alloc]initWithAlertTitle:@"Hello World" WithAlertType:sender.tag];
+    LXAlertView *alert = [[LXAlertView alloc]initWithAlertTitle:@"Hello World" AlertType:sender.tag];
+    alert.delegate = self;
     [alert show];
-    alert.block = ^(BOOL isConfirm, NSString *text) {
-        if (isConfirm) {
-            NSLog(@"%@\n%@", @"true", text);
-        }
-        else {
-            NSLog(@"%@\n%@", @"false", text);
-        }
-    };
+}
+
+- (void)LXAlertViewClickButtonIndex:(NSInteger)buttonIndex Object:(NSString *)object {
+    //1是确定 2是取消 object传textField的值
+    if (buttonIndex == 1) {
+        NSLog(@"ok");
+        NSLog(@"%@", object);
+    } else if (buttonIndex == 2) {
+        NSLog(@"cancel");
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,7 +26,7 @@
 @implementation LXAlertView
 
 - (id)initWithAlertTitle:(NSString *)alertTitle
-           WithAlertType:(AlertType)alertType {
+               AlertType:(AlertType)alertType {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor clearColor];
@@ -56,13 +56,13 @@
 
         self.confirmButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
         self.confirmButton.backgroundColor  = [UIColor blackColor];
-        self.confirmButton.tag              = 301;
+        self.confirmButton.tag              = 1;
         [self.confirmButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchUpInside];
         [self.backgroundView addSubview:self.confirmButton];
 
         self.closeButton                    = [UIButton buttonWithType:UIButtonTypeCustom];
         self.closeButton.backgroundColor    = [UIColor blackColor];
-        self.closeButton.tag                = 300;
+        self.closeButton.tag                = 2;
         [self.closeButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchDown];
         [self.backgroundView addSubview:self.closeButton];
         
@@ -72,8 +72,7 @@
             self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height - 45);
             [self.confirmButton setImage:[UIImage imageNamed:@"alert_confirm"] forState:UIControlStateNormal];
             self.confirmButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width, 45);
-        }
-        else if (AlertSelect == self.type) {
+        } else if (AlertSelect == self.type) {
             self.closeButton.hidden = NO;
             self.textField.hidden = YES;
             self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height - 45);
@@ -81,8 +80,7 @@
             self.closeButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
             [self.confirmButton setTitle:@"确认" forState:UIControlStateNormal];
             self.confirmButton.frame = CGRectMake(self.backgroundView.frame.size.width / 2, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
-        }
-        else if (AlertTextField == self.type) {
+        } else if (AlertTextField == self.type) {
             self.closeButton.hidden = NO;
             self.textField.hidden = NO;
             self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, (self.backgroundView.frame.size.height - 45) / 2);
@@ -108,8 +106,7 @@
         [UIView animateWithDuration:0.2 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         }];
-    }
-    else {
+    } else {
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         [self setStartState];
     }
@@ -137,23 +134,13 @@
 
 #pragma mark - confirm
 - (void)buttonAlert:(UIButton *)sender {
-    [self removeView];
-    if (300 == sender.tag) {
-        if (self.block) {
-            self.block(false, nil);
-        }
-    }
-    else {
-        if (AlertTextField == self.type) {
-            self.block(true, self.textField.text);
-        }
-        else {
-            self.block(true, nil);
-        }
+    [self removeFromSuperview];
+    if ([self.delegate respondsToSelector:@selector(LXAlertViewClickButtonIndex:Object:)]) {
+        [self.delegate LXAlertViewClickButtonIndex:sender.tag Object:_textField.text];
     }
 }
 
-- (void)removeView {
+- (void)removeFromSuperview {
     if (AlertLand == self.type) {
         [self.overlayView removeFromSuperview];
         self.overlayView = nil;
@@ -161,10 +148,9 @@
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, [UIScreen mainScreen].bounds.size.height, kAlertWidth, kAlertHeight);
             self.alpha = 0;
         }completion:^(BOOL finished) {
-            [self removeFromSuperview];
+            [super removeFromSuperview];
         }];
-    }
-    else {
+    } else {
         [self.overlayView removeFromSuperview];
         self.overlayView = nil;
         [UIView animateWithDuration:0.3f delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
