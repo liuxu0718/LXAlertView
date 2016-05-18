@@ -15,14 +15,14 @@ show方法.
 - (void)show
 
 动画开始.
--(void)setStartState {
+- (void)setStartState {
 
 self.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
 }
 
 动画结束.
--(void)setEndState {
+- (void)setEndState {
 
 self.transform = CGAffineTransformMakeScale(1.0, 1.0);
 
