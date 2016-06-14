@@ -26,70 +26,70 @@
 @implementation LXAlertView
 
 - (id)initWithAlertTitle:(NSString *)alertTitle
-               AlertType:(AlertType)alertType {
+               AlertType:(LXAlertViewType)alertType {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor clearColor];
         
-        self.type                           = alertType;
+        _type                           = alertType;
 
-        self.backgroundView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kAlertWidth, kAlertHeight)];
-        self.backgroundView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:self.backgroundView];
+        _backgroundView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kAlertWidth, kAlertHeight)];
+        _backgroundView.backgroundColor = [UIColor whiteColor];
+        [self addSubview:_backgroundView];
 
-        self.titleLabel                     = [[UILabel alloc]init];
-        self.titleLabel.textColor           = [UIColor blackColor];
-        self.titleLabel.font                = [UIFont systemFontOfSize:14];
-        self.titleLabel.textAlignment       = NSTextAlignmentCenter;
-        self.titleLabel.text                = alertTitle;
-        [self.backgroundView addSubview:self.titleLabel];
+        _titleLabel                     = [[UILabel alloc]init];
+        _titleLabel.textColor           = [UIColor blackColor];
+        _titleLabel.font                = [UIFont systemFontOfSize:14];
+        _titleLabel.textAlignment       = NSTextAlignmentCenter;
+        _titleLabel.text                = alertTitle;
+        [_backgroundView addSubview:_titleLabel];
 
-        self.textField                      = [[UITextField alloc]init];
-        self.textField.textColor            = [UIColor blackColor];
-        self.textField.layer.borderColor    = [UIColor blackColor].CGColor;
-        self.textField.layer.borderWidth    = 0.5;
-        self.textField.font                 = [UIFont systemFontOfSize:12];
-        self.textField.placeholder          = @"helloworld";
-        self.textField.delegate             = self;
-        self.textField.returnKeyType        = UIReturnKeyDone;
-        [self.backgroundView addSubview:self.textField];
+        _textField                      = [[UITextField alloc]init];
+        _textField.textColor            = [UIColor blackColor];
+        _textField.layer.borderColor    = [UIColor blackColor].CGColor;
+        _textField.layer.borderWidth    = 0.5;
+        _textField.font                 = [UIFont systemFontOfSize:12];
+        _textField.placeholder          = @"helloworld";
+        _textField.delegate             = self;
+        _textField.returnKeyType        = UIReturnKeyDone;
+        [_backgroundView addSubview:_textField];
 
-        self.confirmButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.confirmButton.backgroundColor  = [UIColor blackColor];
-        self.confirmButton.tag              = 1;
-        [self.confirmButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchUpInside];
-        [self.backgroundView addSubview:self.confirmButton];
+        _confirmButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
+        _confirmButton.backgroundColor  = [UIColor blackColor];
+        _confirmButton.tag              = 1;
+        [_confirmButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchUpInside];
+        [_backgroundView addSubview:_confirmButton];
 
-        self.closeButton                    = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.closeButton.backgroundColor    = [UIColor blackColor];
-        self.closeButton.tag                = 2;
-        [self.closeButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchDown];
-        [self.backgroundView addSubview:self.closeButton];
+        _closeButton                    = [UIButton buttonWithType:UIButtonTypeCustom];
+        _closeButton.backgroundColor    = [UIColor blackColor];
+        _closeButton.tag                = 2;
+        [_closeButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchDown];
+        [_backgroundView addSubview:_closeButton];
         
-        if (AlertDefault == self.type || AlertLand == self.type) {
-            self.closeButton.hidden = YES;
-            self.textField.hidden = YES;
-            self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height - 45);
-            [self.confirmButton setImage:[UIImage imageNamed:@"alert_confirm"] forState:UIControlStateNormal];
-            self.confirmButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width, 45);
-        } else if (AlertSelect == self.type) {
-            self.closeButton.hidden = NO;
-            self.textField.hidden = YES;
-            self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height - 45);
-            [self.closeButton setTitle:@"取消" forState:UIControlStateNormal];
-            self.closeButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
-            [self.confirmButton setTitle:@"确认" forState:UIControlStateNormal];
-            self.confirmButton.frame = CGRectMake(self.backgroundView.frame.size.width / 2, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
-        } else if (AlertTextField == self.type) {
-            self.closeButton.hidden = NO;
-            self.textField.hidden = NO;
-            self.titleLabel.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, (self.backgroundView.frame.size.height - 45) / 2);
-            self.textField.frame = CGRectMake(0, (self.backgroundView.frame.size.height - 45) / 2, self.backgroundView.frame.size.width - 50, 30);
-            self.textField.center = CGPointMake(self.backgroundView.center.x, self.textField.center.y);
-            [self.closeButton setTitle:@"取消" forState:UIControlStateNormal];
-            self.closeButton.frame = CGRectMake(0, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
-            [self.confirmButton setTitle:@"确认" forState:UIControlStateNormal];
-            self.confirmButton.frame = CGRectMake(self.backgroundView.frame.size.width / 2, self.backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
+        if (LXAlertViewTypeDefault == _type || LXAlertViewTypeLand == _type) {
+            _closeButton.hidden = YES;
+            _textField.hidden = YES;
+            _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, _backgroundView.frame.size.height - 45);
+            [_confirmButton setImage:[UIImage imageNamed:@"alert_confirm"] forState:UIControlStateNormal];
+            _confirmButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width, 45);
+        } else if (LXAlertViewTypeSelect == _type) {
+            _closeButton.hidden = NO;
+            _textField.hidden = YES;
+            _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, _backgroundView.frame.size.height - 45);
+            [_closeButton setTitle:@"取消" forState:UIControlStateNormal];
+            _closeButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
+            [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
+            _confirmButton.frame = CGRectMake(_backgroundView.frame.size.width / 2, _backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
+        } else if (LXAlertViewTypeTextField == _type) {
+            _closeButton.hidden = NO;
+            _textField.hidden = NO;
+            _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, (_backgroundView.frame.size.height - 45) / 2);
+            _textField.frame = CGRectMake(0, (_backgroundView.frame.size.height - 45) / 2, _backgroundView.frame.size.width - 50, 30);
+            _textField.center = CGPointMake(_backgroundView.center.x, _textField.center.y);
+            [_closeButton setTitle:@"取消" forState:UIControlStateNormal];
+            _closeButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
+            [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
+            _confirmButton.frame = CGRectMake(_backgroundView.frame.size.width / 2, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
         }
     }
     return self;
@@ -101,7 +101,7 @@
 
 #pragma mark - show
 - (void)show {
-    if (AlertLand == self.type) {
+    if (LXAlertViewTypeLand == _type) {
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, 0, kAlertWidth, kAlertHeight);
         [UIView animateWithDuration:0.2 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
@@ -135,15 +135,15 @@
 #pragma mark - confirm
 - (void)buttonAlert:(UIButton *)sender {
     [self removeFromSuperview];
-    if ([self.delegate respondsToSelector:@selector(LXAlertViewClickButtonIndex:Object:)]) {
-        [self.delegate LXAlertViewClickButtonIndex:sender.tag Object:_textField.text];
+    if ([_delegate respondsToSelector:@selector(lxAlertView:withButtonIndex:withObject:)]) {
+        [_delegate lxAlertView:self withButtonIndex:sender.tag withObject:_textField.text];
     }
 }
 
 - (void)removeFromSuperview {
-    if (AlertLand == self.type) {
-        [self.overlayView removeFromSuperview];
-        self.overlayView = nil;
+    if (LXAlertViewTypeLand == _type) {
+        [_overlayView removeFromSuperview];
+        _overlayView = nil;
         [UIView animateWithDuration:0.2 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, [UIScreen mainScreen].bounds.size.height, kAlertWidth, kAlertHeight);
             self.alpha = 0;
@@ -151,8 +151,8 @@
             [super removeFromSuperview];
         }];
     } else {
-        [self.overlayView removeFromSuperview];
-        self.overlayView = nil;
+        [_overlayView removeFromSuperview];
+        _overlayView = nil;
         [UIView animateWithDuration:0.3f delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [self setStartState];
         } completion:^(BOOL finished) {
@@ -165,13 +165,13 @@
     if (newSuperview == nil) {
         return;
     }
-    if (!self.overlayView) {
-        self.overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
-        self.overlayView.backgroundColor = [UIColor blackColor];
-        self.overlayView.alpha = 0.6f;
-        self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    if (!_overlayView) {
+        _overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
+        _overlayView.backgroundColor = [UIColor blackColor];
+        _overlayView.alpha = 0.6f;
+        _overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
-    [[self appRootViewController].view addSubview:self.overlayView];
+    [[self appRootViewController].view addSubview:_overlayView];
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setEndState];
