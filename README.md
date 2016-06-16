@@ -3,25 +3,25 @@
 自定义的AlertView
 
 
-初始化方法.
-- (id)initWithAlertTitle:(NSString *)alertTitle
-               AlertType:(AlertType)alertType
+初始化方法.（init）
+- (id)initWithAlertTitle:(NSString *)alertTitle 
+               AlertType:(LXAlertViewType)alertType
 
-传值通过delegate
-- (void)LXAlertViewClickButtonIndex:(NSInteger)buttonIndex Object:(NSString *)object 
+传值通过delegate (result)
+- (void)lxAlertView:(LXAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex withObject:(NSString *)object 
 //buttonIndex 1为确定 2为取消    object为textField.text的值.
 
-show方法.
+show方法. （show）
 - (void)show
 
-动画开始.
+动画开始. (startAnimation)
 - (void)setStartState {
 
 self.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
 }
 
-动画结束.
+动画结束.(endAnimation)
 - (void)setEndState {
 
 self.transform = CGAffineTransformMakeScale(1.0, 1.0);
