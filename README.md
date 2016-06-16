@@ -35,4 +35,4 @@ show时将会先调用动画开始方法, 在self即将添加到父视图时将�
 
 从设计上还有一些不足，如果问题issue我或者将问题发到我的邮箱472443138@qq.com, 谢谢.
 
-![image](https://github.com/liuxu0718/PSAlertView/blob/master/screenshot.gif)
+![image](https://github.com/liuxu0718/LXAlertView/blob/master/screenshot.gif)
