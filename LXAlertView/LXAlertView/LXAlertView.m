@@ -25,13 +25,13 @@
 
 @implementation LXAlertView
 
-- (id)initWithAlertTitle:(NSString *)alertTitle
-               AlertType:(LXAlertViewType)alertType {
+- (id)initWithTitle:(NSString *)title
+               Type:(LXAlertViewType)type {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor clearColor];
         
-        _type                           = alertType;
+        _type                           = type;
 
         _backgroundView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kAlertWidth, kAlertHeight)];
         _backgroundView.backgroundColor = [UIColor whiteColor];
@@ -41,7 +41,7 @@
         _titleLabel.textColor           = [UIColor blackColor];
         _titleLabel.font                = [UIFont systemFontOfSize:14];
         _titleLabel.textAlignment       = NSTextAlignmentCenter;
-        _titleLabel.text                = alertTitle;
+        _titleLabel.text                = title;
         [_backgroundView addSubview:_titleLabel];
 
         _textField                      = [[UITextField alloc]init];

@@ -27,10 +27,10 @@ typedef NS_ENUM(NSInteger, LXAlertViewType) {
 
 @property(nonatomic, assign) LXAlertViewType type;
 @property(nonatomic, weak) id<LXAlertViewDelegate> delegate;
-
-
-- (id)initWithAlertTitle:(NSString *)alertTitle
-               AlertType:(LXAlertViewType)alertType;
+///init
+- (id)initWithTitle:(NSString *)title
+               Type:(LXAlertViewType)type;
+///show
 - (void)show;
 
 @end

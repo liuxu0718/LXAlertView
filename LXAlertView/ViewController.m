@@ -8,10 +8,8 @@
 
 #import "ViewController.h"
 #import "LXAlertView.h"
+
 @interface ViewController ()<LXAlertViewDelegate>
-{
-    NSArray *_dataArray;
-}
 
 @end
 
@@ -21,12 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _dataArray = @[@"AlertDefault", @"AlertSelect", @"AlertTextField", @"AlertLand"];
+    
+    NSArray *dataArray = @[@"AlertDefault", @"AlertSelect", @"AlertTextField", @"AlertLand"];
 
-    for (int i = 0; i < _dataArray.count; i++) {
-        UIButton *showButton       = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 200, 40)];
+    for (int i = 0; i < dataArray.count; i++) {
+        UIButton *showButton       = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
         showButton.center          = CGPointMake(self.view.center.x, 50 * (i + 3));
-        [showButton setTitle:_dataArray[i] forState:UIControlStateNormal];
+        [showButton setTitle:dataArray[i] forState:UIControlStateNormal];
         showButton.tag             = i + 1;
         showButton.backgroundColor = [UIColor grayColor];
         [showButton addTarget:self action:@selector(showButtonAction:) forControlEvents:UIControlEventTouchDown];
@@ -35,7 +34,7 @@
 }
 
 - (void)showButtonAction:(UIButton *)sender {
-    LXAlertView *alert = [[LXAlertView alloc]initWithAlertTitle:@"Hello World" AlertType:sender.tag];
+    LXAlertView *alert = [[LXAlertView alloc] initWithTitle:@"Hello World" Type:sender.tag];
     alert.delegate = self;
     [alert show];
 }

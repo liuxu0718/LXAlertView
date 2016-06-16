@@ -4,8 +4,8 @@
 
 
 初始化方法.（init）
-- (id)initWithAlertTitle:(NSString *)alertTitle 
-               AlertType:(LXAlertViewType)alertType
+- (id)initWithTitle:(NSString *)title 
+               Type:(LXAlertViewType)type
 
 传值通过delegate (result)
 - (void)lxAlertView:(LXAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex withObject:(NSString *)object 
