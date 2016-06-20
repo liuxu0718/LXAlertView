@@ -25,8 +25,7 @@
 
 @implementation LXAlertView
 
-- (id)initWithTitle:(NSString *)title
-               Type:(LXAlertViewType)type {
+- (id)initWithTitle:(NSString *)title Type:(LXAlertViewType)type {
     if (self = [super init]) {
         
         self.backgroundColor = [UIColor clearColor];

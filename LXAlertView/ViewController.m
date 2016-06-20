@@ -39,8 +39,8 @@
     [alert show];
 }
 
+
 - (void)lxAlertView:(LXAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex withObject:(NSString *)object {
-    //1是确定 2是取消 object传textField的值
     if (buttonIndex == 1) {
         NSLog(@"ok");
         NSLog(@"%@", object);

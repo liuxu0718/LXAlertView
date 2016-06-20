@@ -12,6 +12,7 @@
 
 @protocol LXAlertViewDelegate <NSObject>
 
+///buttonIndex = 1(confirm)  buttonIndex = 2(cancel) object = textField.text(default = nil)
 - (void)lxAlertView:(LXAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex withObject:(NSString *)object;
 
 @end
@@ -27,9 +28,10 @@ typedef NS_ENUM(NSInteger, LXAlertViewType) {
 
 @property(nonatomic, assign) LXAlertViewType type;
 @property(nonatomic, weak) id<LXAlertViewDelegate> delegate;
+
 ///init
-- (id)initWithTitle:(NSString *)title
-               Type:(LXAlertViewType)type;
+- (id)initWithTitle:(NSString *)title Type:(LXAlertViewType)type;
+
 ///show
 - (void)show;
 
