@@ -94,6 +94,16 @@
     return self;
 }
 
+- (UIView *)overlayView {
+    if (!_overlayView) {
+        _overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
+        _overlayView.backgroundColor = [UIColor blackColor];
+        _overlayView.alpha = 0.6f;
+        _overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    }
+    return _overlayView;
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     return [textField resignFirstResponder];
 }
@@ -164,13 +174,8 @@
     if (newSuperview == nil) {
         return;
     }
-    if (!_overlayView) {
-        _overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
-        _overlayView.backgroundColor = [UIColor blackColor];
-        _overlayView.alpha = 0.6f;
-        _overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    }
-    [[self appRootViewController].view addSubview:_overlayView];
+    
+    [[self appRootViewController].view addSubview:self.overlayView];
     
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setEndState];
