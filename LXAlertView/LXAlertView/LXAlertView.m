@@ -6,8 +6,8 @@
 //  Copyright © 2015年 刘旭. All rights reserved.
 //
 
-#define kAlertWidth 250.0f
-#define kAlertHeight 175.0f
+#define kAlertWidth 250.0
+#define kAlertHeight 175.0
 
 #import "LXAlertView.h"
 
@@ -98,7 +98,7 @@
     if (!_overlayView) {
         _overlayView = [[UIView alloc]initWithFrame:[self appRootViewController].view.bounds];
         _overlayView.backgroundColor = [UIColor blackColor];
-        _overlayView.alpha = 0.6f;
+        _overlayView.alpha = 0.6;
         _overlayView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     }
     return _overlayView;
@@ -112,7 +112,7 @@
 - (void)show {
     if (LXAlertViewTypeLand == _type) {
         self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, 0, kAlertWidth, kAlertHeight);
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, ([UIScreen mainScreen].bounds.size.height - kAlertHeight) * 0.5, kAlertWidth, kAlertHeight);
         }];
     } else {
@@ -152,14 +152,14 @@
     [_overlayView removeFromSuperview];
     _overlayView = nil;
     if (LXAlertViewTypeLand == _type) {
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.3 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, [UIScreen mainScreen].bounds.size.height, kAlertWidth, kAlertHeight);
             self.alpha = 0;
         }completion:^(BOOL finished) {
             [super removeFromSuperview];
         }];
     } else {
-        [UIView animateWithDuration:0.3f delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [self setStartState];
         } completion:^(BOOL finished) {
             [super removeFromSuperview];
