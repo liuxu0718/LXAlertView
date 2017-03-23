@@ -132,13 +132,12 @@
 }
 
 - (UIViewController *)appRootViewController {
-    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController *topVC = appRootVC;
+    UIViewController *appRootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
     //如果是模态.
-    while (topVC.presentedViewController) {
-        topVC = topVC.presentedViewController;
+    while (appRootVc.presentedViewController) {
+        appRootVc = appRootVc.presentedViewController;
     }
-    return topVC;
+    return appRootVc;
 }
 
 #pragma mark - confirm
@@ -150,9 +149,9 @@
 }
 
 - (void)removeFromSuperview {
+    [_overlayView removeFromSuperview];
+    _overlayView = nil;
     if (LXAlertViewTypeLand == _type) {
-        [_overlayView removeFromSuperview];
-        _overlayView = nil;
         [UIView animateWithDuration:0.2 animations:^{
             self.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width - kAlertWidth) * 0.5, [UIScreen mainScreen].bounds.size.height, kAlertWidth, kAlertHeight);
             self.alpha = 0;
@@ -160,8 +159,6 @@
             [super removeFromSuperview];
         }];
     } else {
-        [_overlayView removeFromSuperview];
-        _overlayView = nil;
         [UIView animateWithDuration:0.3f delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             [self setStartState];
         } completion:^(BOOL finished) {
@@ -174,16 +171,12 @@
     if (newSuperview == nil) {
         return;
     }
-    
     [[self appRootViewController].view addSubview:self.overlayView];
-    
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [self setEndState];
     } completion:^(BOOL finished) {
-        
+        [super willMoveToSuperview:newSuperview];
     }];
-    
-    [super willMoveToSuperview:newSuperview];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
