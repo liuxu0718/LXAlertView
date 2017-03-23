@@ -41,6 +41,8 @@
         _titleLabel.font                = [UIFont systemFontOfSize:14];
         _titleLabel.textAlignment       = NSTextAlignmentCenter;
         _titleLabel.text                = title;
+        _titleLabel.frame               = CGRectMake(0, 0, _backgroundView.frame.size.width, _backgroundView.frame.size.height - 45);
+
         [_backgroundView addSubview:_titleLabel];
 
         _textField                      = [[UITextField alloc]init];
@@ -51,44 +53,47 @@
         _textField.placeholder          = @"helloworld";
         _textField.delegate             = self;
         _textField.returnKeyType        = UIReturnKeyDone;
+        _textField.frame                = CGRectMake(0, (_backgroundView.frame.size.height - 45) / 2, _backgroundView.frame.size.width - 50, 30);
+        _textField.center               = CGPointMake(_backgroundView.center.x, _textField.center.y);
         [_backgroundView addSubview:_textField];
 
         _confirmButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
         _confirmButton.backgroundColor  = [UIColor blackColor];
         _confirmButton.tag              = 1;
+        _confirmButton.frame            = CGRectMake(_backgroundView.frame.size.width / 2, _backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
         [_confirmButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchUpInside];
         [_backgroundView addSubview:_confirmButton];
 
         _closeButton                    = [UIButton buttonWithType:UIButtonTypeCustom];
         _closeButton.backgroundColor    = [UIColor blackColor];
         _closeButton.tag                = 2;
+        _closeButton.frame              = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
+
         [_closeButton addTarget:self action:@selector(buttonAlert:) forControlEvents:UIControlEventTouchDown];
         [_backgroundView addSubview:_closeButton];
         
         if (LXAlertViewTypeDefault == _type || LXAlertViewTypeLand == _type) {
             _closeButton.hidden = YES;
             _textField.hidden = YES;
-            _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, _backgroundView.frame.size.height - 45);
+            
+            //设置成图片
             [_confirmButton setImage:[UIImage imageNamed:@"alert_confirm"] forState:UIControlStateNormal];
             _confirmButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width, 45);
         } else if (LXAlertViewTypeSelect == _type) {
             _closeButton.hidden = NO;
             _textField.hidden = YES;
-            _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, _backgroundView.frame.size.height - 45);
+            
+            //设置成文字
             [_closeButton setTitle:@"取消" forState:UIControlStateNormal];
-            _closeButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
             [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
-            _confirmButton.frame = CGRectMake(_backgroundView.frame.size.width / 2, _backgroundView.frame.size.height - 45, self.backgroundView.frame.size.width / 2, 45);
         } else if (LXAlertViewTypeTextField == _type) {
             _closeButton.hidden = NO;
             _textField.hidden = NO;
+            
             _titleLabel.frame = CGRectMake(0, 0, _backgroundView.frame.size.width, (_backgroundView.frame.size.height - 45) / 2);
-            _textField.frame = CGRectMake(0, (_backgroundView.frame.size.height - 45) / 2, _backgroundView.frame.size.width - 50, 30);
-            _textField.center = CGPointMake(_backgroundView.center.x, _textField.center.y);
+            //设置成文字
             [_closeButton setTitle:@"取消" forState:UIControlStateNormal];
-            _closeButton.frame = CGRectMake(0, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
             [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
-            _confirmButton.frame = CGRectMake(_backgroundView.frame.size.width / 2, _backgroundView.frame.size.height - 45, _backgroundView.frame.size.width / 2, 45);
         }
     }
     return self;
